@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrawlerDetails } from './components/brawler-details';
+import { BrawlerForm } from './components/brawler-form';
+import { BrawlerListing } from './components/brawler-listing';
+import { NavBar } from './components/nav-bar';
+import { Home } from './components/home';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <main>
+        <BrowserRouter>
+          <NavBar></NavBar>
+          <Routes>
+            <Route path="/brawlers" element={<BrawlerListing />}></Route>
+            <Route path="/brawlers/details/:id" element={<BrawlerDetails />}></Route>
+            <Route path="/brawlers/create" element={<BrawlerForm />}></Route>
+            <Route path="/" element={<Home />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </main>
     </div>
   );
 }
