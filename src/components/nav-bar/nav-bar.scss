@@ -1,0 +1,68 @@
+@import '../../scss/variables';
+@import '../../scss/breakpoints';
+
+.NavBar {
+  display: flex;
+  align-items: center;
+  background-color: $nav-bar-background;
+  min-height: 50px;
+
+  @include for-phone {
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+  }
+
+  &__MenuButton {
+    width: 40px;
+    height: 30px;
+    margin: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: none;
+    cursor: pointer;
+
+    > span {
+      width: 100%;
+      height: 4px;
+      background-color: $nav-bar-hamburger;
+    }
+
+    @include for-phone {
+      display: flex;
+    }
+  }
+
+  &__Links {
+    @include for-phone {
+      display: none;
+    }
+
+    &--active {
+      @include for-phone {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+
+    a,
+    a:link,
+    a:visited {
+      text-decoration: none;
+      color: $nav-bar-link;
+      padding: 5px 10px;
+      line-height: 50px;
+
+      @include for-phone {
+        display: inline-block;
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: $nav-bar-link-hover-background;
+      }
+    }
+  }
+}
