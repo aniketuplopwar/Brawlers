@@ -13,7 +13,7 @@ export const NavBar = ({ links }) => {
         <span></span>
         <span className="sr-only">{isOpen ? 'close menu' : 'open menu'}</span>
       </button>
-      <div className={`NavBar__Links ${isOpen && 'NavBar__Links--active'}`}>
+      <div className={`NavBar__Links ${isOpen ? 'NavBar__Links--active' : ''}`}>
         {links.map((link) => (
           <Link key={link.href} to={link.href}>
             {link.label}
