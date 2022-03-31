@@ -29,6 +29,7 @@ export const BrawlerForm = ({ brawler = {}, formConfig = brawlerFormFields, onSa
               name={fieldName}
               label={brawlerFormFields[fieldName].label}
               value={_brawler[fieldName] || ''}
+              type={brawler.type}
               onChange={(e) => {
                 setErrors({ ...errors, [fieldName]: undefined })
                 setBrawler({ ..._brawler, [fieldName]: e.target.value })
@@ -40,7 +41,7 @@ export const BrawlerForm = ({ brawler = {}, formConfig = brawlerFormFields, onSa
       </ul>
       <div className="BrawlerForm__Actions">
         <Button>Save</Button>
-        <Button styleType="Secondary" onClick={onCancel}>
+        <Button styleType="Secondary" onClick={onCancel} type="button">
           Cancel
         </Button>
       </div>

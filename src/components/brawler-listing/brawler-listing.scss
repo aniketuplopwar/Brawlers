@@ -1,0 +1,46 @@
+@import '../../scss/variables';
+
+.BrawlerListing {
+  &__Container > ul {
+    padding: 0;
+    border: 1px solid $border-default-color;
+  }
+
+  &__Header,
+  &__Item {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__Id {
+      display: inline-block;
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    &__Name {
+      flex: 1;
+    }
+  }
+
+  &__Header {
+    font-weight: bold;
+    background-color: $table-header-background;
+    border-bottom: 1px solid $border-dark-color;
+  }
+
+  &__Item {
+    &:nth-child(odd) {
+      background: $table-row-background;
+    }
+  }
+
+  &__NoRecord {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 10px;
+  }
+}

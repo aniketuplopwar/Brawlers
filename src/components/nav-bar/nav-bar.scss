@@ -36,6 +36,8 @@
   }
 
   &__Links {
+    display: flex;
+
     @include for-phone {
       display: none;
     }
@@ -63,6 +65,10 @@
 
       &:hover {
         background-color: $nav-bar-link-hover-background;
+      }
+
+      &:active {
+        background-color: $nav-bar-active-link-background;
       }
     }
   }

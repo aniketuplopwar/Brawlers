@@ -9,6 +9,6 @@ export const Button = ({ styleType = 'Primary', children, ...restProps }) => {
 }
 
 Button.propTypes = {
-  styleType: PropTypes.oneOf(['Primary', 'Secondary']),
+  styleType: PropTypes.oneOf(['Primary', 'Secondary', 'Danger']),
   children: PropTypes.node
 }

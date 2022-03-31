@@ -3,11 +3,13 @@ $nav-bar-link: #333;
 $nav-bar-hamburger: #333;
 $nav-bar-background: #eee;
 $nav-bar-link-hover-background: #ddd;
+$nav-bar-active-link-background: #ccc;
 
 //Body
 $body-background: #fefefe;
 $basic-font-color: #333;
 $border-default-color: #ddd;
+$border-dark-color: #ccc;
 
 //form
 $error-red: #f00;
@@ -20,3 +22,9 @@ $primary-button-background: #007bff;
 $primary-button-font-color: #fff;
 $secondary-button-background: #6c757d;
 $secondary-button-font-color: #fff;
+$danger-button-background: #dc3545;
+$danger-button-font-color: #fff;
+
+//table
+$table-header-background: #eee;
+$table-row-background: #efefef;

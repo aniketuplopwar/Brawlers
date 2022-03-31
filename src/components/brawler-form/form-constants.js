@@ -10,13 +10,13 @@ export const brawlerFormFields = {
     validation: ['isRequired']
   },
   health: {
-    type: 'text',
+    type: 'number',
     label: 'Health',
-    validation: ['isRequired']
+    validation: ['isRequired', 'isNumeric']
   },
   power: {
-    type: 'text',
+    type: 'number',
     label: 'Power',
-    validation: ['isRequired']
+    validation: ['isRequired', 'isNumeric']
   }
 }

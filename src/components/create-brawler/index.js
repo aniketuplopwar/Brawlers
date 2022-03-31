@@ -1,15 +1,17 @@
+import { useNavigate } from 'react-router-dom'
 import { BrawlerForm } from '../brawler-form'
 import './create-brawler.scss'
 
 export const CreateBrawler = () => {
-  const brwaler = {
-    name: 'Aniket',
-    type: 'hero'
+  const navigate = useNavigate()
+
+  const onCancel = () => {
+    navigate('/brawlers')
   }
   return (
     <div className="CreateBrawler">
       <h1> Create Brawler</h1>
-      <BrawlerForm brawler={brwaler} onSave={(brawler) => console.log(brawler)}></BrawlerForm>
+      <BrawlerForm onCancel={onCancel}></BrawlerForm>
     </div>
   )
 }
