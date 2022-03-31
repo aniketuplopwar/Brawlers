@@ -1,0 +1,24 @@
+@import '../../scss/variables';
+.TextField {
+  margin-top: 10px;
+
+  > label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: $basic-font-color;
+  }
+
+  > input {
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  > p {
+    color: $error-red;
+    margin: 5px 0 0 0;
+  }
+}

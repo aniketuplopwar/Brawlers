@@ -6,6 +6,7 @@
   align-items: center;
   background-color: $nav-bar-background;
   min-height: 50px;
+  border-bottom: 1px solid $border-default-color;
 
   @include for-phone {
     flex-direction: column;
