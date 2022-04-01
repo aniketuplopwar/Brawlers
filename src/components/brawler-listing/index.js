@@ -1,12 +1,34 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { mockBrawlers } from '../../mocks/mock-brawlers'
+import { api } from '../../common/http-utils'
 import { Button } from '../button'
 import './brawler-listing.scss'
 
 export const BrawlerListing = () => {
-  const [brawlers] = useState(mockBrawlers)
-  const onDelete = (id) => () => console.log(id)
+  const [brawlers, setBrawlers] = useState([])
+  const [apiCallInProgress, setApiCallInProgress] = useState(true)
+
+  const getBrawlers = async () => {
+    const _brawlers = await api('brawlers', {
+      method: 'GET'
+    })
+    setBrawlers(_brawlers)
+  }
+
+  const onDelete = (id) => async () => {
+    setApiCallInProgress(true)
+    await api(`brawlers/${id}`, {
+      method: 'DELETE'
+    })
+    await getBrawlers()
+    setApiCallInProgress(false)
+  }
+
+  useEffect(async () => {
+    setApiCallInProgress(true)
+    await getBrawlers()
+    setApiCallInProgress(false)
+  }, [])
 
   return (
     <div className="BrawlerListing">
@@ -19,10 +41,13 @@ export const BrawlerListing = () => {
             <span className="BrawlerListing__Header__Name">Name</span>
             <span className="BrawlerListing__Header__Actions">Actions</span>
           </li>
-          {brawlers.length > 0 ? (
+          {!apiCallInProgress &&
+            brawlers.length > 0 &&
             brawlers.map((brawler) => (
               <li key={brawler.id} className="BrawlerListing__Item">
-                <span className="BrawlerListing__Item__Id">{brawler.id}</span>
+                <span className="BrawlerListing__Item__Id" title={brawler.id}>
+                  {brawler.id}
+                </span>
                 <span className="BrawlerListing__Item__Name">
                   <Link to={`details/${brawler.id}`}>{brawler.name}</Link>
                 </span>
@@ -32,12 +57,13 @@ export const BrawlerListing = () => {
                   </Button>
                 </span>
               </li>
-            ))
-          ) : (
+            ))}
+          {!apiCallInProgress && brawlers.length == 0 && (
             <li className="BrawlerListing__Item">
               <div className="BrawlerListing__NoRecord">No Brawlers added yet</div>
             </li>
           )}
+          {apiCallInProgress && <p> Loading...</p>}
         </ul>
       </div>
     </div>

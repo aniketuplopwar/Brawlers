@@ -1,0 +1,17 @@
+@import '../../scss/variables';
+.Alert {
+  width: 100%;
+  &-Error {
+    padding: 10px;
+    color: $error-red;
+    background-color: $card-background;
+    border: 1px solid $error-red;
+  }
+
+  &-Success {
+    padding: 10px;
+    color: $success-green;
+    background-color: $card-background;
+    border: 1px solid $success-green;
+  }
+}

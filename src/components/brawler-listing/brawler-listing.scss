@@ -16,8 +16,12 @@
 
     &__Id {
       display: inline-block;
-      width: 20px;
+      width: 50px;
       margin-right: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 10px;
+      text-transform: uppercase;
     }
 
     &__Name {
