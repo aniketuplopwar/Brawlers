@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { mockBrawlers } from '../../mocks/mock-brawlers'
 import { Button } from '../button'
 import './brawler-listing.scss'
-import { mockBrawlers } from './mock-brawlers'
 
 export const BrawlerListing = () => {
   const [brawlers] = useState(mockBrawlers)
@@ -24,7 +24,7 @@ export const BrawlerListing = () => {
               <li key={brawler.id} className="BrawlerListing__Item">
                 <span className="BrawlerListing__Item__Id">{brawler.id}</span>
                 <span className="BrawlerListing__Item__Name">
-                  <Link to={`brawler/details/${brawler.id}`}>{brawler.name}</Link>
+                  <Link to={`details/${brawler.id}`}>{brawler.name}</Link>
                 </span>
                 <span className="BrawlerListing__Item__Action">
                   <Button styleType="Danger" onClick={onDelete(brawler.id)}>

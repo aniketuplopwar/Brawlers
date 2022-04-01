@@ -1,0 +1,33 @@
+@import '../../scss/variables';
+
+.BrawlerDetails {
+  > ul {
+    padding: 0;
+  }
+
+  &__Field {
+    display: flex;
+    list-style: none;
+    padding: 10px 15px;
+    border: 1px solid $border-default-color;
+    border-top: none;
+
+    &:first-of-type {
+      border-top: 1px solid $border-default-color;
+    }
+
+    &:nth-child(even) {
+      background-color: $table-row-background;
+    }
+
+    &__Name {
+      min-width: 150px;
+    }
+  }
+
+  &__ActionContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+}
