@@ -54,5 +54,4 @@ describe('components/brawler-details', () => {
     expect(screen.getByDisplayValue(mockBrawlers[0].health)).toBeInTheDocument()
     expect(screen.getByDisplayValue(mockBrawlers[0].power)).toBeInTheDocument()
   })
-  it.skip('should save the updated data record', () => {})
 })
