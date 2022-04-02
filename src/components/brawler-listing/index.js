@@ -67,7 +67,7 @@ export const BrawlerListing = () => {
               <div className="BrawlerListing__NoRecord">No Brawlers added yet</div>
             </li>
           )}
-          {apiCallInProgress && <p> Loading...</p>}
+          {apiCallInProgress && <p className="BrawlerListing__Loader"> Loading...</p>}
         </ul>
       </div>
     </div>
