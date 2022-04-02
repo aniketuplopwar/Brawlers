@@ -20,21 +20,19 @@ https://brawler-test.ew.r.appspot.com/
 - Semantic HTML
 - Accessibility compliant upto basic level
 
-### Testing
+## Tech Stack
 
-- Unit Tests
+### Frontend
 
-## Backend
+`React`, `Testing: Jest`, `SASS`
 
-- `node`, `express`
+### Backend
 
-## Infra
+`node`, `express`
 
-- `GCP`, `Cloud function`, `Cloud storage`
+### Infra
 
-## Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`GCP`, `Cloud function`, `Cloud storage`
 
 ## To run it locally
 
