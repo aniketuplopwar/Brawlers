@@ -44,7 +44,6 @@ export const BrawlerDetails = () => {
       <hr />
       <div className="BrawlerDetails__ActionContainer">
         <Button styleType="Secondary" onClick={() => navigate('/brawlers')}>
-          {' '}
           Go Back
         </Button>
         {!isEditMode && (

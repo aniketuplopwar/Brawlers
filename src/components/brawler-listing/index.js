@@ -52,7 +52,11 @@ export const BrawlerListing = () => {
                   <Link to={`details/${brawler.id}`}>{brawler.name}</Link>
                 </span>
                 <span className="BrawlerListing__Item__Action">
-                  <Button styleType="Danger" onClick={onDelete(brawler.id)}>
+                  <Button
+                    styleType="Danger"
+                    onClick={onDelete(brawler.id)}
+                    data-testid={`delete-${brawler.id}`}
+                  >
                     X
                   </Button>
                 </span>

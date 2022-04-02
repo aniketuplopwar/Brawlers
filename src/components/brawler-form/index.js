@@ -54,8 +54,8 @@ BrawlerForm.propTypes = {
     id: PropTypes.string,
     name: PropTypes.string,
     type: PropTypes.string,
-    health: PropTypes.string,
-    power: PropTypes.string
+    health: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    power: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   }),
   formConfig: PropTypes.object,
   onSave: PropTypes.func,

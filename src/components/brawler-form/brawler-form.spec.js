@@ -68,7 +68,7 @@ describe('components/brawler-form', () => {
     fireEvent.submit(container.querySelector('form'))
 
     //then
-    expect(screen.getByText(/name is required/i)).toBeInTheDocument()
+    expect(screen.getByText(/Name: is required/i)).toBeInTheDocument()
     expect(nameInput.value).toBe('')
   })
 
