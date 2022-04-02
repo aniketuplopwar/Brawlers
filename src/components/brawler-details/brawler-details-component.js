@@ -22,7 +22,7 @@ BrawlerDetailsComponent.propTypes = {
   brawler: PropTypes.shape({
     name: PropTypes.string,
     type: PropTypes.string,
-    health: PropTypes.number,
-    power: PropTypes.power
+    health: PropTypes.string,
+    power: PropTypes.string
   })
 }
