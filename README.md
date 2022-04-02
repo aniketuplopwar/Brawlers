@@ -11,6 +11,7 @@ https://brawler-test.ew.r.appspot.com/
 - Composition of components
 - SASS Configured CSS
 - REST based api integration
+- BEM CSS naming convention
 
 ### User Experience
 
@@ -48,3 +49,9 @@ Builds the app for production to the `build` folder.\
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+## To Deploy
+
+### `gcloud init`
+
+### `gcloud app deploy`
